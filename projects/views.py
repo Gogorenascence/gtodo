@@ -10,3 +10,11 @@ def list_projects(request):
         "projects": projects,
     }
     return render(request, "projects/home.html", context)
+
+
+# @login_required
+# def show_project(request):
+#     project = Project.objects.get(id=id)
+#     context = {
+#         "project": pro
+#     }
