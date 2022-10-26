@@ -13,12 +13,12 @@ def list_projects(request):
     return render(request, "projects/home.html", context)
 
 
-# @login_required
-# def show_project(request):
-#     project = Project.objects.get(id=id)
-#     context = {
-#         "project": pro
-#     }
+@login_required
+def show_project(request, id):
+    context = {
+        "project": Project.objects.get(id=id) if Project else None,
+    }
+    return render(request, "projects/detail.html", context)
 
 
 @login_required
